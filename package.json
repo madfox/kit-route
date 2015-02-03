@@ -1,0 +1,28 @@
+{
+  "name": "kit-route",
+  "version": "0.0.2",
+  "description": "Routes.",
+  "main": "lib/main.js",
+  "dependencies": {
+    "methods": "1.1.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:madfox/kit-route.git"
+  },
+  "keywords": [
+    "route"
+  ],
+  "author": {
+    "name": "madfox.fw@gmail.com"
+  },
+  "readme": "## Installation\r\n\r\n```\r\n$ npm install kit-route\r\n```\r\n\r\n\r\n## Example\r\n\r\n```js\r\nvar koa = require(\"koa\");\r\nvar app = koa();\r\n\r\nvar Route = require(\"kit-route\");\r\n\r\nvar r1 = Route();\r\n\r\nr1.get(function*(next){\r\n\tthis.body = \"get one\";\r\n});\r\n\r\nr1.get(\"/readme\", function*(next){\r\n\tthis.body = \"ReadMe\";\r\n});\r\n\r\nr1.post(\"/post\", function*(next){\r\n\t/* ... */\r\n});\r\n\r\nr1.addHandle(\"/\", \"get,post,delete,put\", function*(next){\r\n\tthis.body = \"....\";\r\n});\r\n\r\napp.use(r1.gen());\r\n\r\napp.listen(12345);\r\n```",
+  "readmeFilename": "README.md",
+  "_id": "kit-route@0.0.2",
+  "_shasum": "cf52d879e35eb51547bb23ff5d25b3f1e483f088",
+  "_from": "kit-route@*"
+}
